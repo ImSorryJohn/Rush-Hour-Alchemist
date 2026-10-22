@@ -17,8 +17,13 @@ public class PlayerMovement : MonoBehaviour
     {
         speedX = Input.GetAxisRaw("Horizontal") * movSpeed;
         speedY = Input.GetAxisRaw("Vertical") * movSpeed;
-        rb.linearVelocity = new Vector2(speedX, speedY);
+        
         //vfxRenderer.SetVector3("ColliderPos", transform.position);
 
+    }
+
+    void FixedUpdate()
+    {
+        rb.linearVelocity = new Vector2(speedX, speedY);
     }
 }
